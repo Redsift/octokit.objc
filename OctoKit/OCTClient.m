@@ -719,7 +719,7 @@ static NSString *OCTClientOAuthClientSecret = nil;
 	if (self.authenticated) {
 		path = [NSString stringWithFormat:@"user%@", relativePath];
 	} else if (self.user != nil) {
-		path = [NSString stringWithFormat:@"users/%@%@", self.user.login, relativePath];
+		path = [NSString stringWithFormat:@"users/%@%@", self.user.login == nil ? self.user.rawLogin : self.user.login, relativePath];
 	} else {
 		return [RACSignal error:self.class.userRequiredError];
 	}
