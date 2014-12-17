@@ -137,7 +137,7 @@ extern NSString * const OCTClientErrorMessagesKey;
 // OCTClientAuthorizationScopesPublicKeyAdmin   - Full administrative access to the user's public SSH keys,
 //                                                including permission to delete them. This includes
 //                                                OCTClientAuthorizationScopesPublicKeyWrite.
-typedef enum : NSUInteger {
+typedef NS_OPTIONS(NSInteger, OCTClientAuthorizationScopes) {
 	OCTClientAuthorizationScopesPublicReadOnly = 1 << 0,
 
 	OCTClientAuthorizationScopesUserEmail = 1 << 1,
@@ -156,7 +156,7 @@ typedef enum : NSUInteger {
 	OCTClientAuthorizationScopesPublicKeyRead = 1 << 10,
 	OCTClientAuthorizationScopesPublicKeyWrite = 1 << 11,
 	OCTClientAuthorizationScopesPublicKeyAdmin = 1 << 12,
-} OCTClientAuthorizationScopes;
+};
 
 // The medium used to deliver the one-time password.
 //
